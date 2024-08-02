@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+### Task Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Task Management App built with React, Redux Toolkit, Context API, and Material-UI. It provides functionalities for task management, real-time updates, progress scoring, user authentication, and profile management.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. **Task Management:**
+   - Add, edit, and delete tasks.
+   - Each task includes a title, description, due date, and status (To Do, In Progress, Done).
 
-### `npm start`
+2. **Real-Time Deadline Updates:**
+   - Display remaining time dynamically.
+   - Update time every second.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Filtering and Sorting:**
+   - Filter tasks by due date and status.
+   - Sort tasks by soonest and latest deadlines.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Progress Scoring:**
+   - Track task completion with scoring.
+   - Display progress in a dedicated card.
 
-### `npm test`
+5. **User Authentication:**
+   - Registration with fields: Name, email, phone, password, and confirm password.
+   - Store data in local storage with Base64 encoding for passwords.
+   - Login with email and password.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. **Profile Management:**
+   - Upload and display profile picture.
+   - Display profile picture in the navigation bar.
 
-### `npm run build`
+7. **Additional Features:**
+   - Search bar to filter tasks by title.
+   - Notifications for task actions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+8. **State Management:**
+   - Use Redux Toolkit for global state.
+   - Use Context API for component-specific state.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+9. **User Interface:**
+   - Design with Material-UI.
+   - Ensure responsiveness and accessibility.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   git clone git@github.com:ImSandeepyadav/Task-Management.git
+   cd task-management-app
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Start the development server:
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## File Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```plaintext
+task-management-app/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── app/
+│   │   ├── store.js
+│   ├── components/
+│   │   ├── AddTaskForm.js
+│   │   ├── Filter.js
+│   │   ├── LoginForm.js
+│   │   ├── Notifications.js
+│   │   ├── ProfilePicture.js
+│   │   ├── ProgressScore.js
+│   │   ├── RegisterForm.js
+│   │   ├── SearchBar.js
+│   │   ├── Task.js
+│   │   ├── TaskList.js
+│   ├── features/
+│   │   ├── auth/
+│   │   │   ├── authSlice.js
+│   │   ├── filter/
+│   │   │   ├── filterSlice.js
+│   │   ├── notifications/
+│   │   │   ├── notificationsSlice.js
+│   │   ├── profile/
+│   │   │   ├── profileSlice.js
+│   │   ├── progress/
+│   │   │   ├── progressSlice.js
+│   │   ├── search/
+│   │   │   ├── searchSlice.js
+│   │   ├── tasks/
+│   │   │   ├── tasksSlice.js
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── .gitignore
+├── package.json
+├── README.md
+└── ...
+```
 
-### Code Splitting
+## Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### AddTaskForm
 
-### Analyzing the Bundle Size
+A form for adding new tasks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Filter
 
-### Making a Progressive Web App
+Component for filtering tasks by status.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### LoginForm
 
-### Advanced Configuration
+Form for user login.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Notifications
 
-### Deployment
+Displays notifications for task actions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### ProfilePicture
 
-### `npm run build` fails to minify
+Component for uploading and displaying the profile picture.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### ProgressScore
+
+Displays the user's progress score.
+
+### RegisterForm
+
+Form for user registration.
+
+### SearchBar
+
+Search bar to filter tasks by title.
+
+### Task
+
+Component representing a single task.
+
+### TaskList
+
+List of tasks.
+
+## Redux Slices
+
+### authSlice
+
+Handles user authentication state.
+
+### filterSlice
+
+Manages the task filtering state.
+
+### notificationsSlice
+
+Handles notifications for task actions.
+
+### profileSlice
+
+Manages the user profile state.
+
+### progressSlice
+
+Tracks user progress scoring.
+
+### searchSlice
+
+Handles the search query state.
+
+### tasksSlice
+
+Manages the tasks state.
+
+## Contributing
+
+Contributions are welcome! Please submit a pull request or open an issue to discuss any changes.
